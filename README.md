@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# Arc de Triomphe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic WebGL experience of the iconic French monument, built with React Three Fiber, custom GLSL shaders, and scroll-driven animation.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![Three.js](https://img.shields.io/badge/Three.js-r184-black?style=flat-square&logo=threedotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Overview
 
-## Expanding the ESLint configuration
+This project is an interactive, cinematic 3D presentation of the Arc de Triomphe — the historic monument at the heart of Paris. Visitors are taken through a visually rich, scroll-driven journey around the monument, with cinematic postprocessing effects, smooth camera choreography, and custom GLSL materials bringing the scene to life in the browser.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Layer | Technology |
+|---|---|
+| 3D Rendering | [Three.js](https://threejs.org/) + [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) |
+| Postprocessing | [@react-three/postprocessing](https://github.com/pmndrs/react-postprocessing) (Unreal Bloom, depth effects) |
+| Helpers / Abstractions | [@react-three/drei](https://github.com/pmndrs/drei) |
+| Shaders | Custom GLSL via [vite-plugin-glsl](https://github.com/UstymUkhman/vite-plugin-glsl) |
+| Scroll Animation | [Lenis](https://lenis.darkroom.engineering/) (smooth scroll) + [GSAP](https://gsap.com/) |
+| UI Framework | React 19 + TypeScript |
+| Styling | Tailwind CSS v4 |
+| Debug | [Leva](https://github.com/pmndrs/leva) + [r3f-perf](https://github.com/utsuboco/r3f-perf) |
+| Build | Vite 8 |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/Ony3dika/Arc-de-Triomphe.git
+cd Arc-de-Triomphe
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## License
+
+MIT
+
+
