@@ -2,7 +2,7 @@ import { Sparkles } from "@react-three/drei";
 import { Leva, useControls } from "leva";
 import Arc from "./Arc";
 import Trees from "./Trees";
-// import { Perf } from "r3f-perf";
+  // import { Perf } from "r3f-perf";
 import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -89,7 +89,7 @@ const Experience = () => {
       />
 
       {/* Effects */}
-      <Effects />
+      {/* <Effects /> */}
     </>
   );
 };

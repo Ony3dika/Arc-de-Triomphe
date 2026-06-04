@@ -18,7 +18,7 @@ const Effects = () => {
     <>
       <Sky sunPosition={sunPosition} />
 
-      <EffectComposer multisampling={8} autoClear={false}>
+      <EffectComposer multisampling={8} >
         <ChromaticAberration
           blendFunction={BlendFunction.NORMAL}
           offset={new Vector2(0.0015, 0)}
@@ -26,7 +26,7 @@ const Effects = () => {
 
         <Noise blendFunction={BlendFunction.REFLECT} opacity={0.05} />
         <Bloom
-          intensity={10}
+          intensity={6}
           luminanceThreshold={0.3}
           luminanceSmoothing={0.8}
         />
