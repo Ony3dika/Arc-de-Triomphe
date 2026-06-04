@@ -10,7 +10,7 @@ import { useGSAP } from "@gsap/react";
 import Napoleon from "./Napoleon";
 import Marseillaise from "./Marseillaise";
 import ReflectiveFloor from "./ReflectiveFloor";
-import Effects from "./Effects";
+// import Effects from "./Effects";
 import CameraRig from "./CameraRig";
 import Flame from "./Flame";
 
